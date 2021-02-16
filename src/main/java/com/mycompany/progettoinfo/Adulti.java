@@ -9,6 +9,13 @@ package com.mycompany.progettoinfo;
  *
  * @author tonma
  */
-public class Adulti {
+public class Adulti extends Personaggio {
+
+    @Override
+    public int getForza() {
+        return this.esperienza*100;
+    }
+    
+    
     
 }
