@@ -11,9 +11,8 @@ package com.mycompany.progettoinfo;
  */
 public class Eroe extends Personaggio {
     
-    String nome;
-    int energiaVitale;
-    String schieramento;
+    private String nome;
+    private int energiaVitale;
 
     
 
@@ -31,15 +30,6 @@ public class Eroe extends Personaggio {
 
     public void setEnergiaVitale(int energiaVitale) {
         this.energiaVitale = energiaVitale;
-    }
-
-    public String getSchieramento() {
-        return schieramento;
-    }
-
-    public void setSchieramento(String schieramento)throws Exception {
-        if(schieramento.equals("bene") || schieramento.equals("male")) this.schieramento = schieramento;
-        else throw new Exception("Schieramento non valido");
     }
     
     
