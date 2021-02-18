@@ -13,7 +13,7 @@ public class Adulti extends Personaggio {
 
     @Override
     public int getForza() {
-        return this.esperienza*100;
+        return this.esperienza*6+30; //Gli adulti li ho paragonati agli Uomini del gioco originale
     }
     
     
