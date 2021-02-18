@@ -46,7 +46,7 @@ public class Eroe extends Personaggio {
 
     @Override
     public int getForza() {
-        return this.esperienza*50+energiaVitale*50;
+        return this.esperienza*50+this.energiaVitale*50;
     }
     
 }
