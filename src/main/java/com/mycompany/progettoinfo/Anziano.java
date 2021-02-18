@@ -13,9 +13,7 @@ public class Anziano extends Personaggio{
 
     @Override
     public int getForza() {
-        //non so come deve essere calcolata la forza in funzione dell'esperienza però 
-        //qui ci va il calcolo che è diverso per ogni razza o eroe
-        return this.esperienza*100;
+        return this.esperienza*3+10; //Gli anziani li ho paragonati agli Hobbit del gioco originale
     }
     
 }
