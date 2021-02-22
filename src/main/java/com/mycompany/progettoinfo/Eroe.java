@@ -14,7 +14,12 @@ public class Eroe extends Personaggio {
     private String nome;
     private int energiaVitale;
 
-    
+    public Eroe(int esperienza, String nome, int energiaVitale, String schieramento) {
+        super(esperienza);
+        this.nome = nome;
+        this.energiaVitale = energiaVitale;
+        this.schieramento = schieramento;
+    }
 
     public String getNome() {
         return nome;
@@ -31,8 +36,6 @@ public class Eroe extends Personaggio {
     public void setEnergiaVitale(int energiaVitale) {
         this.energiaVitale = energiaVitale;
     }
-    
-    
 
     @Override
     public int getForza() {

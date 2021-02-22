@@ -10,6 +10,11 @@ package com.mycompany.progettoinfo;
  * @author tonma
  */
 public class AngelaDaMondello extends Personaggio {
+    
+    public AngelaDaMondello(int esperienza) {
+        super(esperienza);
+        this.schieramento = "male";
+    }
 
     @Override
     public int getForza() {

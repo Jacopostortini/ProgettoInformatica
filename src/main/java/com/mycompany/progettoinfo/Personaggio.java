@@ -13,6 +13,10 @@ public abstract class Personaggio {
     
     protected int esperienza;
     protected String schieramento;
+    
+    public Personaggio(int esperienza){
+        this.esperienza = esperienza;
+    }
 
     public int getEsperienza() {
         return esperienza;

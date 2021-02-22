@@ -9,7 +9,12 @@ package com.mycompany.progettoinfo;
  *
  * @author tonma
  */
-public class Bambini extends Personaggio {
+public class Bambino extends Personaggio {
+
+    public Bambino(int esperienza) {
+        super(esperienza);
+        this.schieramento = "bene";
+    }
 
     @Override
     public int getForza() {

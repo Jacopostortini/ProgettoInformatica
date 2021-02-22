@@ -10,7 +10,12 @@ package com.mycompany.progettoinfo;
  * @author jacopo
  */
 public class Anziano extends Personaggio{
-
+    
+    public Anziano(int esperienza) {
+        super(esperienza);
+        this.schieramento = "bene";
+    }
+    
     @Override
     public int getForza() {
         return this.esperienza*3+10; //Gli anziani li ho paragonati agli Hobbit del gioco originale
