@@ -15,14 +15,16 @@ public class FormArmateDelBene extends javax.swing.JFrame {
     private int numeroEroiTotali = 2;
     private int numeroEsperienza = 1;
     private int forzaTotale;
+    FormArmateDelMale formMale;
     private String[] nomiEroi = {"Vaccino", "Immune", "Giulio Tarro"};
 
     /**
      * Creates new form Main
      */
-    public FormArmateDelBene(int forzaTotale) {
+    public FormArmateDelBene(int forzaTotale, FormArmateDelMale formMale) {
         initComponents();
         this.forzaTotale = forzaTotale;
+        this.formMale = formMale;
     }
 
     public int calcolaForza(int bam, int ad, int anz, int sc, int numEroi){
@@ -121,11 +123,12 @@ public class FormArmateDelBene extends javax.swing.JFrame {
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(numeroBambini, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
@@ -139,8 +142,8 @@ public class FormArmateDelBene extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(armateTotali))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(59, 59, 59)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
                                 .addComponent(eroiTotali))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -153,7 +156,7 @@ public class FormArmateDelBene extends javax.swing.JFrame {
                                 .addComponent(jLabel8)
                                 .addGap(52, 52, 52)
                                 .addComponent(compraEsperienza)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                         .addComponent(vendiButton)))
                 .addGap(67, 67, 67))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -196,7 +199,7 @@ public class FormArmateDelBene extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(eroiTotali)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(esperienza)
@@ -205,9 +208,9 @@ public class FormArmateDelBene extends javax.swing.JFrame {
                     .addComponent(vendiButton))
                 .addGap(59, 59, 59)
                 .addComponent(consegnaButton)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(errore)
-                .addGap(45, 45, 45))
+                .addGap(31, 31, 31))
         );
 
         pack();
@@ -233,6 +236,7 @@ public class FormArmateDelBene extends javax.swing.JFrame {
             if(bambiniInseriti+adultiInseriti+anzianiInseriti+scienziatiInseriti <= this.numeroArmateTotali){
                 this.setVisible(false);
                 this.forzaTotale = calcolaForza(bambiniInseriti, adultiInseriti, anzianiInseriti, scienziatiInseriti, numeroEroiTotali);
+                this.formMale.setVisible(true);
             } else {
                 errore.setText("Le tue armate superano il numero consentito");
                 return;
