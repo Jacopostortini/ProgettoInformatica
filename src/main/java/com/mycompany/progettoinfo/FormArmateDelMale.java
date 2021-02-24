@@ -5,6 +5,8 @@
  */
 package com.mycompany.progettoinfo;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author tonma
@@ -17,13 +19,13 @@ public class FormArmateDelMale extends javax.swing.JFrame {
     private int forzaTotale;
     private String [] nomiEroi = {"Trump","HIV","Peste"};
     MainForm form;
+    Eroe[] heros;
 
     /**
      * Creates new form FormArmateDelMale
      */
-    public FormArmateDelMale(int forzaTotale, MainForm form) {
+    public FormArmateDelMale(MainForm form) {
         initComponents();
-        this.forzaTotale = forzaTotale;
         this.form = form;
     }
     
@@ -33,16 +35,42 @@ public class FormArmateDelMale extends javax.swing.JFrame {
         Covid c = new Covid (numeroEsperienza);
         Ebola e = new Ebola (numeroEsperienza);
         AngelaDaMondello a = new AngelaDaMondello (numeroEsperienza);
-        Eroe [] eroi = new Eroe [numEroi];
+        heros = new Eroe [numEroi];
         int forzaEroi = 0;
-        for(Eroe er : eroi){
-            er = new Eroe(numeroEsperienza, nomiEroi[(int)(Math.random()*3)], (int)(Math.random()*11+1), "male");
-            forzaEroi += e.getForza();
+        for(int j = 0; j<numEroi; j++){
+            heros[j] = new Eroe(numeroEsperienza, nomiEroi[(int)(Math.random()*3)], (int)(Math.random()*10+1), "male");
+            forzaEroi += heros[j].getForza();
         }
         int forza = i.getForza()*inf + c.getForza()*cov+e.getForza()*eb+a.getForza()*ang+forzaEroi;
         return forza;
         
     }
+    
+    public Eroe[] getHeros(){
+        return this.heros;
+    }
+
+    public JTextField getNumeroAngele() {
+        return numeroAngele;
+    }
+
+    public JTextField getNumeroCovid() {
+        return numeroCovid;
+    }
+
+    public JTextField getNumeroEbola() {
+        return numeroEbola;
+    }
+
+    public JTextField getNumeroInfluenze() {
+        return numeroInfluenze;
+    }
+
+    public int getForzaTotale() {
+        return forzaTotale;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -156,7 +184,7 @@ public class FormArmateDelMale extends javax.swing.JFrame {
                                 .addGap(82, 82, 82)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel9))
                                 .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(eroiTotali, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)

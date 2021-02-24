@@ -5,6 +5,8 @@
  */
 package com.mycompany.progettoinfo;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author jacopo
@@ -17,13 +19,14 @@ public class FormArmateDelBene extends javax.swing.JFrame {
     private int forzaTotale;
     FormArmateDelMale formMale;
     private String[] nomiEroi = {"Vaccino", "Immune", "Giulio Tarro"};
+    private Eroe[] heros;
+    private int forza;
 
     /**
      * Creates new form Main
      */
-    public FormArmateDelBene(int forzaTotale, FormArmateDelMale formMale) {
+    public FormArmateDelBene(FormArmateDelMale formMale) {
         initComponents();
-        this.forzaTotale = forzaTotale;
         this.formMale = formMale;
     }
 
@@ -32,16 +35,40 @@ public class FormArmateDelBene extends javax.swing.JFrame {
         Adulto adulto = new Adulto(numeroEsperienza);
         Anziano anziano = new Anziano(numeroEsperienza);
         Scienziato scienziato = new Scienziato(numeroEsperienza);
-        Eroe[] eroi = new Eroe[numEroi];
+        heros = new Eroe[numEroi];
         int forzaEroi = 0;
-        for(Eroe e : eroi){
-            e = new Eroe(numeroEsperienza, nomiEroi[(int)(Math.random()*3)], (int)(Math.random()*11+1), "bene");
-            forzaEroi += e.getForza();
+        for(int i = 0; i < numEroi; i++){
+            heros[i] = new Eroe(numeroEsperienza, nomiEroi[(int)(Math.random()*3)], (int)(Math.random()*10+1), "bene");
+            forzaEroi += heros[i].getForza();
         }
         int forza = bambino.getForza()*bam+adulto.getForza()*ad+anziano.getForza()*anz+scienziato.getForza()*sc+forzaEroi;
         return forza;
     }
     
+    public Eroe[] getHeros(){
+        return this.heros;
+    }
+
+    public JTextField getNumeroAdulti() {
+        return numeroAdulti;
+    }
+
+    public JTextField getNumeroAnziani() {
+        return numeroAnziani;
+    }
+
+    public JTextField getNumeroBambini() {
+        return numeroBambini;
+    }
+
+    public JTextField getNumeroScienziati() {
+        return numeroScienziati;
+    }
+    
+    
+    public int getForzaTotale() {
+        return forzaTotale;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

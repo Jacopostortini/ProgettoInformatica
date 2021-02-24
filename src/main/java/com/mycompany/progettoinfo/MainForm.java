@@ -5,22 +5,71 @@
  */
 package com.mycompany.progettoinfo;
 
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+
 /**
  *
  * @author tonma
  */
 public class MainForm extends javax.swing.JFrame {
-
+    private FormArmateDelBene formBene;
+    private FormArmateDelMale formMale;
     private int forzaBene;
     private int forzaMale;
+
     /**
      * Creates new form MainForm
      */
-    public MainForm(int fb, int fm) {
+    public MainForm() {        
         initComponents();
-        forzaBene = fb;
-        forzaMale = fm;
-        this.messaggio.setText(fb<fm ? "Ha vinto il male" : "Ha vinto il bene");
+    }
+
+    public void setFormBene(FormArmateDelBene formBene) {
+        this.formBene = formBene;
+    }
+
+    public void setFormMale(FormArmateDelMale formMale) {
+        this.formMale = formMale;
+    }
+    
+    @Override
+    public void setVisible(boolean visibility){
+        super.setVisible(visibility);
+        this.forzaBene = formBene.getForzaTotale();
+        this.forzaMale = formMale.getForzaTotale();
+        this.messaggio.setText(forzaBene<forzaMale ? "Ha vinto il male" : forzaBene>forzaMale ? "Ha vinto il bene" : "Pareggio");
+        
+        this.forzaBeneLabel.setText(forzaBene+"");
+        this.forzaMaleLabel.setText(forzaMale+"");
+        
+        this.bambiniLabel.setText(Integer.parseInt(formBene.getNumeroBambini().getText())+" bambini");
+        this.adultiLabel.setText(Integer.parseInt(formBene.getNumeroAdulti().getText())+" adulti");
+        this.anzianiLabel.setText(Integer.parseInt(formBene.getNumeroAnziani().getText())+" anziani");
+        this.scienziatiLabel.setText(Integer.parseInt(formBene.getNumeroScienziati().getText())+" scienziati");
+        this.angeleLabel.setText(Integer.parseInt(formMale.getNumeroAngele().getText())+" Angele da Mondello");
+        this.covidLabel.setText(Integer.parseInt(formMale.getNumeroCovid().getText())+" covid");
+        this.ebolaLabel.setText(Integer.parseInt(formMale.getNumeroEbola().getText())+" ebole");
+        this.influenzaLabel.setText(Integer.parseInt(formMale.getNumeroInfluenze().getText())+" influenze");
+        
+        this.eroiBenePanel.setLayout(new GridLayout(formBene.getHeros().length, 0));
+        this.eroiMalePanel.setLayout(new GridLayout(formMale.getHeros().length, 0));
+        for(Eroe e : formBene.getHeros()){
+            JLabel l = new JLabel(e.getNome()+" con energia vitale "+e.getEnergiaVitale());
+            this.eroiBenePanel.add(l);
+        }
+        
+        for(Eroe e : formMale.getHeros()){
+            JLabel l = new JLabel(e.getNome()+" con energia vitale "+e.getEnergiaVitale());
+            this.eroiMalePanel.add(l);
+        }
+        
+        
+        this.eroiBenePanel.repaint();
+        this.eroiBenePanel.revalidate();
+        
+        this.eroiMalePanel.repaint();
+        this.eroiMalePanel.revalidate();
     }
 
     /**
@@ -34,28 +83,151 @@ public class MainForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         messaggio = new javax.swing.JLabel();
+        adultiLabel = new javax.swing.JLabel();
+        bambiniLabel = new javax.swing.JLabel();
+        anzianiLabel = new javax.swing.JLabel();
+        scienziatiLabel = new javax.swing.JLabel();
+        eroiBenePanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        angeleLabel = new javax.swing.JLabel();
+        covidLabel = new javax.swing.JLabel();
+        ebolaLabel = new javax.swing.JLabel();
+        influenzaLabel = new javax.swing.JLabel();
+        eroiMalePanel = new javax.swing.JPanel();
+        forzaBeneLabel = new javax.swing.JLabel();
+        forzaMaleLabel = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        messaggio.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        messaggio.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        messaggio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        messaggio.setText("Ha vinto ...");
+
+        adultiLabel.setText("adulti");
+
+        bambiniLabel.setText("bambini");
+
+        anzianiLabel.setText("anziani");
+
+        scienziatiLabel.setText("scienziati");
+
+        javax.swing.GroupLayout eroiBenePanelLayout = new javax.swing.GroupLayout(eroiBenePanel);
+        eroiBenePanel.setLayout(eroiBenePanelLayout);
+        eroiBenePanelLayout.setHorizontalGroup(
+            eroiBenePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        eroiBenePanelLayout.setVerticalGroup(
+            eroiBenePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
+        jLabel6.setText("vs");
+
+        angeleLabel.setText("angele");
+
+        covidLabel.setText("cov");
+
+        ebolaLabel.setText("ebola");
+
+        influenzaLabel.setText("influe");
+
+        javax.swing.GroupLayout eroiMalePanelLayout = new javax.swing.GroupLayout(eroiMalePanel);
+        eroiMalePanel.setLayout(eroiMalePanelLayout);
+        eroiMalePanelLayout.setHorizontalGroup(
+            eroiMalePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        eroiMalePanelLayout.setVerticalGroup(
+            eroiMalePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        forzaBeneLabel.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        forzaBeneLabel.setText("forza BENE");
+
+        forzaMaleLabel.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        forzaMaleLabel.setText("forza MALE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(280, Short.MAX_VALUE)
-                .addComponent(messaggio)
-                .addGap(120, 120, 120))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(anzianiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(95, 95, 95))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bambiniLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(adultiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(scienziatiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jLabel6))
+                    .addComponent(eroiBenePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(eroiMalePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(angeleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                    .addComponent(covidLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ebolaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(influenzaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(forzaBeneLabel)
+                .addGap(87, 87, 87)
+                .addComponent(messaggio, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(forzaMaleLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(messaggio)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(messaggio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(forzaBeneLabel)
+                    .addComponent(forzaMaleLabel))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bambiniLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(angeleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adultiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(covidLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ebolaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(influenzaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(anzianiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scienziatiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(eroiMalePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(eroiBenePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
@@ -64,7 +236,20 @@ public class MainForm extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel adultiLabel;
+    private javax.swing.JLabel angeleLabel;
+    private javax.swing.JLabel anzianiLabel;
+    private javax.swing.JLabel bambiniLabel;
+    private javax.swing.JLabel covidLabel;
+    private javax.swing.JLabel ebolaLabel;
+    private javax.swing.JPanel eroiBenePanel;
+    private javax.swing.JPanel eroiMalePanel;
+    private javax.swing.JLabel forzaBeneLabel;
+    private javax.swing.JLabel forzaMaleLabel;
+    private javax.swing.JLabel influenzaLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel messaggio;
+    private javax.swing.JLabel scienziatiLabel;
     // End of variables declaration//GEN-END:variables
 }

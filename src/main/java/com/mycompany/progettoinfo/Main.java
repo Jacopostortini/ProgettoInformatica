@@ -12,11 +12,11 @@ package com.mycompany.progettoinfo;
 public class Main {
     
     public static void main(String args[]){
-        int forzaBene = 0;
-        int forzaMale = 0;
-        MainForm form = new MainForm(forzaBene, forzaMale);
-        FormArmateDelMale formMale = new FormArmateDelMale (forzaMale, form);
-        FormArmateDelBene formBene = new FormArmateDelBene(forzaBene, formMale); 
+        MainForm form = new MainForm();
+        FormArmateDelMale formMale = new FormArmateDelMale(form);
+        FormArmateDelBene formBene = new FormArmateDelBene(formMale); 
+        form.setFormBene(formBene);
+        form.setFormMale(formMale);
         formBene.setVisible(true);
         
        
