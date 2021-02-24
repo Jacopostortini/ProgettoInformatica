@@ -13,8 +13,13 @@ public class Main {
     
     public static void main(String args[]){
         int forzaBene = 0;
+        int forzaMale = 0;
+        MainForm form = new MainForm(forzaBene, forzaMale);
+        FormArmateDelMale formMale = new FormArmateDelMale (forzaMale, form);
+        FormArmateDelBene formBene = new FormArmateDelBene(forzaBene, formMale); 
+        formBene.setVisible(true);
         
-        new FormArmateDelBene(forzaBene).setVisible(true);
+       
     }
     
 }
