@@ -33,43 +33,39 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="forzaBeneLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="messaggio" min="-2" pref="297" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="forzaMaleLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="104" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="anzianiLabel" min="-2" pref="245" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
+                          <Component id="bambiniLabel" min="-2" pref="209" max="-2" attributes="0"/>
+                          <Component id="scienziatiLabel" min="-2" pref="245" max="-2" attributes="0"/>
+                          <Component id="eroiBenePanel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="bambiniLabel" min="-2" pref="209" max="-2" attributes="0"/>
-                                  <Component id="adultiLabel" min="-2" pref="218" max="-2" attributes="0"/>
-                                  <Component id="scienziatiLabel" min="-2" pref="245" max="-2" attributes="0"/>
+                                  <Component id="anzianiLabel" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
+                                  <Component id="adultiLabel" alignment="0" min="-2" pref="218" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="eroiMalePanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="angeleLabel" pref="218" max="32767" attributes="0"/>
+                          <Component id="covidLabel" max="32767" attributes="0"/>
+                          <Component id="ebolaLabel" max="32767" attributes="0"/>
+                          <Component id="influenzaLabel" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="eroiBenePanel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="eroiMalePanel" min="-2" max="-2" attributes="0"/>
-                  <Component id="angeleLabel" pref="218" max="32767" attributes="0"/>
-                  <Component id="covidLabel" max="32767" attributes="0"/>
-                  <Component id="ebolaLabel" max="32767" attributes="0"/>
-                  <Component id="influenzaLabel" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              <Component id="forzaBeneLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-              <Component id="messaggio" min="-2" pref="297" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="forzaMaleLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,47 +78,42 @@
                   <Component id="forzaBeneLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="forzaMaleLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bambiniLabel" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                  <Component id="angeleLabel" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="adultiLabel" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="covidLabel" min="-2" pref="18" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="bambiniLabel" min="-2" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="ebolaLabel" min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="angeleLabel" min="-2" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="adultiLabel" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="covidLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="anzianiLabel" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="ebolaLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="influenzaLabel" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="anzianiLabel" min="-2" pref="43" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="scienziatiLabel" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="scienziatiLabel" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="influenzaLabel" alignment="3" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
                       <Component id="eroiMalePanel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="eroiBenePanel" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="eroiBenePanel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="88" max="32767" attributes="0"/>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -139,22 +130,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="adultiLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="adulti"/>
+        <Property name="text" type="java.lang.String" value="ADULTI"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="bambiniLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="bambini"/>
+        <Property name="text" type="java.lang.String" value="BAMBINI"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="anzianiLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="anziani"/>
+        <Property name="text" type="java.lang.String" value="ANZIANI"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="scienziatiLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="scienziati"/>
+        <Property name="text" type="java.lang.String" value="SCIENZIATI"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="eroiBenePanel">
@@ -182,22 +173,22 @@
     </Component>
     <Component class="javax.swing.JLabel" name="angeleLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="angele"/>
+        <Property name="text" type="java.lang.String" value="ANGELE"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="covidLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="cov"/>
+        <Property name="text" type="java.lang.String" value="COVID"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="ebolaLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ebola"/>
+        <Property name="text" type="java.lang.String" value="EBOLA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="influenzaLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="influe"/>
+        <Property name="text" type="java.lang.String" value="INFLUENZE"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="eroiMalePanel">
@@ -218,7 +209,7 @@
     <Component class="javax.swing.JLabel" name="forzaBeneLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Ubuntu" size="24" style="0"/>
+          <Font name="Arial Black" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="forza BENE"/>
       </Properties>
@@ -226,7 +217,7 @@
     <Component class="javax.swing.JLabel" name="forzaMaleLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Ubuntu" size="24" style="0"/>
+          <Font name="Arial Black" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="forza MALE"/>
       </Properties>
